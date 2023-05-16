@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(230 215 218 1);
+}
+
+.header {
+    height: 400px;
+    background-image: url('./images/coffee-bgnd.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+}

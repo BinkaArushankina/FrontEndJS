@@ -1,0 +1,38 @@
+body {
+    background-color: pink;
+    font-size: 32px;
+    color: whitesmoke;
+    margin: 0;
+}
+
+.outer1 {
+    height: 200px;
+    background-color: blue;
+
+    /*padding-top: 25px; swerchu */
+    /*padding-right: 25px; sprawa */ 
+    /*padding-bottom: 25px; snizu */ 
+    /*padding-left: 25px; slewa */ 
+    /*padding: 25px; wse stotroni*/
+    /*padding: 25px 35px ; po wertikali po gorizontali*/
+    /*padding: 25px 35px 45px; werch prawa snizu*/
+    /*padding: 25px 35px 45px 55px;  po tschasowoj strelke swerchu*/
+    /* dlja margina taksche*/
+
+    margin: 0 auto 10px;
+    width: 90%;
+    border-top: 3px solid black;
+}
+
+.outer2 {
+    height: 200px;
+    background-color: green;
+    margin-top: 20px;
+}
+
+.inner1 {
+    height: 100px;
+    background-color: red ;
+    width: 80%;
+    margin: 13px auto 0 ;
+}

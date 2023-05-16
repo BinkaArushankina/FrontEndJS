@@ -1,0 +1,44 @@
+#bg {
+    background-image: url('./Image/bg.jpg');
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    position: absolute;
+}
+
+#asteroid {
+    top: 80px ;
+    right: 110px;
+}
+#planet-1 {
+    top: 20px;
+    left: 185px;
+}
+#planet-2 {
+    left: 50px;
+    top: 60px;
+}
+#planet-3 {
+    left: 145px;
+    bottom: 15px;
+    z-index: 2;
+    /*z index nemnogo mensche , on na wtorom plane budet*/
+}
+#spaceship {
+    left: 165px;
+    top: 140px;
+}
+#superman {
+    right: 30px ;
+    bottom: 0 ;
+}
+#ufo {
+    bottom: 50px;
+    left: 110px;
+    z-index: 3;
+    /*tschem bolsche z index tem blische k perednemu planu object*/
+}

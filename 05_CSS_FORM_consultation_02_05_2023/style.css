@@ -1,0 +1,54 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+textarea {
+    height: 150px;
+}
+
+h1 {
+    text-align: center;
+}
+
+span {
+    color: red;
+}
+
+input[type="checkbox"] {
+    align-self: flex-start;
+}
+
+input[type="submit"], input[type="reset"] {
+    margin: 5px auto;
+    width: 30%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+}

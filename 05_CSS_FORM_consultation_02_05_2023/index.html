@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Form from webinar</title>
+</head>
+<body>
+    <h1>Form from webinar</h1>
+    <form action="#" method="post">
+        <label for="name">Name: <span>*</span></label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="lastName">Lastname: <span>*</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your lastName" required>
+
+        <label for="email">Email: <span>*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone: <span>*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <small>Format:123-456-7890</small>
+
+        <label for="birthdate">Birthdate: <span>*</span></label>
+        <input type="date" name="birthdate" id="birthdate"  required>
+
+        <label for="gender">Gender: <span>*</span></label>
+        <select name="gender" id="gender" required>
+            <option value="">Select your gender: </option>
+            <option value="male">Male </option>
+            <option value="female">Female </option>
+            <option value="other">Other </option>
+        </select>
+
+        <label for="newsletter">Subscribe to newsletter: </label>
+        <input type="checkbox" name="newsletter" id="newsletter" value="yes">
+        <label for="newsletter">Yes, please subscribe me to your newsletter: </label>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="5" placeholder="Enter a brief bio about your self"></textarea>
+    
+        <label for="avatar">Avatar:</label>
+        <input type="file" name="avatar" id="avatar">
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
