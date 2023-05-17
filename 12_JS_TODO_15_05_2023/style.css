@@ -20,4 +20,37 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+#taskList {
+    text-align: left;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    /*border: 1px solid black;*/  /*wsegda border estj dasche esli pustoj list*/
+    padding: 20px 40px 20px 55px;
+}
+
+#taskListBorder:has(li) {
+    border: 1px solid black;  /*a tak budet border pojawlatsa tolko esli lsit estj*/
+}
+ 
+#taskList > li {
+    margin-bottom: 10px;
+}
+
+#taskList > li > span {
+    margin: 0 10px;
+}
+
+#taskList > li > button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #00ff3c;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
