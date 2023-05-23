@@ -1,0 +1,16 @@
+body {
+    position: relative;
+}
+
+.userDetailsDiv {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.userDetailsDiv > h2 {
+    text-align: center;
+}
