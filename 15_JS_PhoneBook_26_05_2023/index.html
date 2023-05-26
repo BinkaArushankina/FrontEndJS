@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
+    <title>Phone Book App</title>
+</head>
+<div>
+    <h1>Phone Book</h1>
+    <div id="addContactContainer">
+    <h2>Add Contact</h2>
+    <form id="addContactForm">
+        <label for="contactName">Name: </label>
+        <input type="text" id="contactName">
+
+        <label for="contactEmail">Email: </label>
+        <input type="email" id="contactEmail">
+
+        <label for="contactPhone">Phone: </label>
+        <input type="tel" id="contactPhone">
+
+        <label for="contactCompany">Company: </label>
+        <input type="text" id="contactCompany">
+
+        <label for="contactAddress">Address: </label>
+        <input type="text" id="contactAddress">
+
+        <button id="addContact">Add</button>
+    </form>
+    </div>
+
+    <div id="changeContactContainer"></div>
+    <h2>Change Contact</h2>
+    <form id="changeContactForm">
+        <label for="changecontactName">Name: </label>
+        <select id="changeContactName">
+            <option value="">choose name contact:   </option>
+        </select>
+
+        <label for="changecontactEmail">Email: </label>
+        <input type="email" id="changecontactEmail">
+
+        <label for="changecontactPhone">Phone: </label>
+        <input type="tel" id="changecontactPhone">
+
+        <label for="changecontactCompany">Company: </label>
+        <input type="text" id="changecontactCompany">
+
+        <label for="changecontactAddress">Address: </label>
+        <input type="text" id="changecontactAddress">
+
+        <button id="changeContact">Change</button>
+    </form>
+    </div>
+
+    <hr>
+    <input type="text" id="search" placeholder="input user name">
+    <hr>
+
+    <div id="contactListContainer">
+        <h2>Contact List</h2>
+        <ul id="contactList">
+
+        </ul>
+    </div>
+</body>
+</html>
