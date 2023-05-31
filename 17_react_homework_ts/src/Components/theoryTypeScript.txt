@@ -44,3 +44,23 @@ function circle(diam: number ): string { //diametr eto atribut funkzii , a woswr
 
 let sayHi: (name: string) => void; //atribut tolko string i nitschego ne wosraschaet
 sayHi = (name: string) => console.log('Hi ' + name); //propisali strelotschnuju funkziu
+
+
+interface IPerson { //interface tschasto naswanie s I ,  s 2 polami i ich tipisaziej
+    fullName: string,
+    isProgrammer: boolean
+}
+let p1: IPerson = {  //perwij person
+    fullName: 'Vasya',
+    isProgrammer: true
+    //age: 15
+}
+//p1.fullName = 'Vasiliy'; ERROR - read only, tolko tschitat, ismenat nelsa
+
+//age = getUserAge(); // w peremennuju age, mi loschim resultat dejstwia metod getUserAge
+//age => string | number; // woswr string ili number dolschna eta funkzia
+
+if (typeof age === 'string') {
+    age = +age;
+}    
+
