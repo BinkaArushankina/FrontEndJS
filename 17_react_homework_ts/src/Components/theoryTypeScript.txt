@@ -64,3 +64,26 @@ if (typeof age === 'string') {
     age = +age;
 }    
 
+
+//generiki  - mi ne snaem kakoj tip budet
+
+interface IDog<T> {  //uniwersalnij interface s pomoschju T , generic, ne snaem kakogo tipa budet treats
+    breed: string,
+    treats: T
+}
+
+let labrador: IDog<string> = { //breed i tak woswr string, a treats tolko u etogo objecta woswr string u etogo metoda
+    breed: 'labrador',
+    treats: 'chew sticks, tripe'
+}
+
+let scottieDog: IDog<string[]> = { // treats w etoj funkzii woswraschaet massiw strok
+    breed: 'scottish terrier',
+    treats: ['turkey', 'haggies']
+}
+
+
+
+//const form = document.getElementById('form') as HTMLFormElement   //srasu ukasiwat, schto peremennaja takogo tipa
+                                                       //estj gotowie tipi dlja html tags, wsegda natschinajutsa s html...Element..(...=> ima tega c bolschoj bukwi)
+                                                       
