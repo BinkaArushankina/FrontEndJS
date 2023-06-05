@@ -72,12 +72,12 @@ import React, { useState, ChangeEvent, MouseEvent } from "react";
 import "./TodoList.css";
 
 // описали содержимое task
-interface ITask {
+interface ITask { //otedelnij tip dannich sosdali kak oolean ili string, sosdali itask
     name: string,
     completed: boolean
 }
 
-const TodoList: React.FC = (): JSX.Element => {
+const TodoList: React.FC = (): JSX.Element => { //woswr react functional FC, a prinim elm jsx
     // React.useState ...
     // Array of all our tasks
     // Массив объектов(объекты типа ITask)
@@ -86,7 +86,8 @@ const TodoList: React.FC = (): JSX.Element => {
     // Объект типа ITask
     const [task, setTask] = useState<ITask>({name: '', completed: false});
     // boolean variable
-    const [check, setCheck] = useState<boolean>(false);
+    const [check, setCheck] = useState<boolean>(false); 
+    //moschno tak, setCheck(!check) ,wsegda menaem na protiwopoloschnij check
 
     // task = {name: '', completed: false}; (неправильно)
     // setTask({name: '', completed: false}); (правильно)
@@ -104,9 +105,12 @@ const TodoList: React.FC = (): JSX.Element => {
     // describe onClick for our button
     // Описание event даёт возможность видеть все доступные поля и методы event
     const handleAddTask = (e: MouseEvent<HTMLButtonElement>) => {
+
         // В taskList помещаем все старые tasks плюс новый task
-        setTasksList((prev) => [...prev, task]);
-        // Затираем task
+        //ismenenie lubogo useState, wasschno i nuschno
+        setTasksList((prev) => [...prev, task]);  //...prev - kopia prediduschee snatschenie, plus nowoe snatschenie
+        
+        // Затираем task, scto input bil pustoj
         setTask({
             name: '',
             completed: false
@@ -114,7 +118,7 @@ const TodoList: React.FC = (): JSX.Element => {
     };
 
     const handleRemoveTask = (index: number): void => {
-        const updatedTasks = [...tasksList];
+        const updatedTasks = [...tasksList]; //operator spread, poswolaet sosdatj glubokuju kopiu massiwa
         // method splice:
         // 1. удаляет из массива элементы, начиная с index, в количестве 1;
         // 2. изменяет исходный массив(!);
