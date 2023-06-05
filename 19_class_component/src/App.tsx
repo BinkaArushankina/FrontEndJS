@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Counter from './components/Counter';
+import Counter1 from './components/FuncComponent';
 
-function App() {
+function App() { //roditel (props peredaetsa ot roditela k rebenku(counter))  Peredatscha props peredaem kakujuta infu. props eto initialValue{100} Props sapisiwaetsa kak atributi tega
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+      <Counter initialValue={0} /> 
+      <Counter initialValue={100}/>
+      <Counter initialValue={10000}/>
+      <Counter1 />
     </div>
   );
 }
