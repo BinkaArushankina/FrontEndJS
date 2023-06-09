@@ -7,10 +7,11 @@
 3 What does this return? const firstPromise = new Promise((res, rej) => { setTimeout(res, 500, "one"); 
 //the method res will be called in 500 milleseconds with argument “one” });
 const secondPromise = new Promise((res, rej) => { setTimeout(res, 100, "two"); });
-
-4 Promise.race([firstPromise, secondPromise]).then(res => console.log(res)); 
+ Promise.race([firstPromise, secondPromise]).then(res => console.log(res)); 
 //race – the method of Promise that gets several promises and performs an one that is resolved first 
-• A: "one" • B: "two" • C: "two" "one" • D: "one" "two" 4. What's the output? let person = { name: "Lydia" };
+• A: "one" • B: "two" • C: "two" "one" • D: "one" "two" 
+
+4. What's the output? let person = { name: "Lydia" };
  const members = [person]; person = null;
 console.log(members); • A: null • B: [null] • C: [{}] • D: [{ name: "Lydia" }]
 
@@ -34,7 +35,8 @@ console.log(a[b]); • A: 123 • B: 456 • C: undefined • D: ReferenceError
 10 What's the output? function getInfo(member, year) { member.name = "Lydia"; year = "1998"; }
 const person = { name: "Sarah" }; const birthYear = "1997";
 getInfo(person, birthYear);
-console.log(person, birthYear); • A: { name: "Lydia" }, "1997" • B: { name: "Sarah" }, "1998" • C: { name: "Lydia" }, "1998" • D: { name: "Sarah" }, "1997"
+console.log(person, birthYear); • A: { name: "Lydia" }, "1997" • B: { name: "Sarah" }, "1998" 
+• C: { name: "Lydia" }, "1998" • D: { name: "Sarah" }, "1997"
 
 11 What's the output? function greeting() { throw "Hello world!"; }
 function sayHi() { try { const data = greeting(); 
@@ -49,7 +51,8 @@ console.log(y); • A: [[1, 2, 3, 4, 5]] • B: [1, 2, 3, 4, 5] • C: 1
 
 13 What's the output? const user = { name: "Lydia", age: 21 }; const admin = { admin: true, ...user };
 console.log(admin); • A: { admin: true, user: { name: "Lydia", age: 21 } } 
-• B: { admin: true, name: "Lydia", age: 21 } • C: { admin: true, user: ["Lydia", 21] } • D: { admin: true }
+• B: { admin: true, name: "Lydia", age: 21 } • C: { admin: true, user: ["Lydia", 21] } 
+• D: { admin: true }
 
 14 What's the output? const settings = { username: "lydiahallie", level: 19, health: 90 };
 const data = JSON.stringify(settings, ["level", "health"]);
