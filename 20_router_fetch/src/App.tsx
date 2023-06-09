@@ -4,9 +4,9 @@ import { Routes, Route, Link } from 'react-router-dom';//pomogajut s perehodom n
 import Users from './components/Users';
 import Posts from './components/Posts';
 import Comments from './components/Comments';
-import { IComment } from './utils/util';
-import { IPost } from './utils/util';
-import { IUser } from './utils/util';
+import { AppContext, IComment, IPost, IUser } from './utils/util';
+
+//sdes e etom priloschenii mi  i tscheres rpopsi raspetschatiwaem i tscheres context.Provider , tolko usersow snatschala a potom 3 wariantom tosche Context.Provider no usche i userow i posti i commenti
 
 const baseUrl = 'https://jsonplaceholder.typicode.com';
 
@@ -74,10 +74,12 @@ function App() {
 
   //instrumenti marschrutisazii, no w nego nado peredatj infu w function App i ottuda w usersi commentsi posti
   //na glawnoj stranize otobr eti 3 knopki , a link eto obwertka tega, schtobi perekidiwali na druguju stranizu, w 'to' napisatj kuda mi hotim schtobi nas perekinuli 
-  //ostalnie routi ne startowie 82-85 budut rabotatj esli mi naschmem a ne kogda sagrusitsa straniza
-  //w stroke 82 mi goworim poloschi poschalujsta po adressu /users elm Users s dannimi users
-  return (
-    <Routes>
+  //ostalnie routi ne startowie 83-86 budut rabotatj esli mi naschmem a ne kogda sagrusitsa straniza
+  //w stroke 83 mi goworim poloschi poschalujsta po adressu /users elm Users s dannimi users
+  return (//w value peeredatj tot nabor infi, schto mi hotim peredawatj
+  <AppContext.Provider value={{users, comments, posts}}>
+    {/*<Context.Provider value={users}>esli hotim tolko userow peredatj*/}
+      <Routes>
          <Route path="/" element={<>
             <Link to="/users"><button>Users</button></Link>
             <Link to="/posts"><button>Posts</button></Link>
@@ -87,7 +89,9 @@ function App() {
          <Route path="/users" element={<Users users={users}/>}  />
          <Route path="/posts" element={<Posts posts={posts}/>}  />
          <Route path="/comments" element={<Comments comments={comments}/>}  />
-    </Routes>
+      </Routes>
+    {/*</Context.Provider>*/}
+  </AppContext.Provider>
   );
 }
 

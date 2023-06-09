@@ -89,5 +89,7 @@ else { const message = "Yay! You're old enough!" }return message } console.log(c
 
 22. What's the output? function sum(num1, num2 = num1) { console.log(num1 + num2) }
 sum(10) • A: NaN • B: 20 • C: ReferenceError 
-• D: undefined 23.What's the output? let newList = [1, 2, 3].push(4)
+• D: undefined 
+
+23.What's the output? let newList = [1, 2, 3].push(4)
 console.log(newList.push(5)) • A: [1, 2, 3, 4, 5] • B: [1, 2, 3, 5] • C: [1, 2, 3, 4] • D: Error
