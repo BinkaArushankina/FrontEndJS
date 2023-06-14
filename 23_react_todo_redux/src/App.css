@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Tangerine&display=swap");
+
+
+.App {
+  text-align: center;
+}
+
+.h1title {
+  font-family: "Tangerine", cursive;
+  font-size: 8rem;
+  margin: 10px 0 0 0;
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 8px 8px 2px rgb(0, 0, 0, 0.1);
+}
