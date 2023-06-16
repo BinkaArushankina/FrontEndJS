@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  //1.1 sosdaem obolotschku w wide komponenta Provider s objasatelnim atributom store wokrug komponenta 
   <Provider store={store}>
     <App />
   </Provider>

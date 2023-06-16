@@ -1,30 +1,67 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
+// 3.5 Opisiwaem interface kastomnich suschnostej: IUser, IPost, IComment
 interface IUser {// odin user, opisiwaem tip
     id: number;
     name: string
 }
 
-interface IUsersState {
-    users: IUser[],//odin user
-    currentPage: number,
+interface IPost {
+    id: number;
+    title: string
 }
 
-const initialState: IUsersState = {//natschalnoe snatschenie
-    users: [],//po umoltschaniu pustoj massiw
-    currentPage: 1//natschalnaja str 1 
+interface IComment {
+    id: number;
+    body: string
 }
 
-const userSlice = createSlice({
+// 3.4 Opisiwaem interface gloalnogo sostojania
+export interface DataState {
+    users: IUser[];//po umoltschaniu pustoj massiw
+    posts: IPost[];
+    comments: IComment[];
+    currentPagePosts: number;//natschalnaja str 1 
+    currentPageComments: number;
+    postsPerPage: number;
+    commentsPerPage: number;
+}
+
+//3.3 opisiwaju startowoe snatschenie globalnogo sostojania, po umoltschaniu perwie 3  pusto 
+const initialState: DataState = {//natschalnoe snatschenie
+    users: [],
+    posts: [],
+    comments: [],
+    commentsPerPage: 10,
+    postsPerPage: 10,// na odnoj stranize otobraschatj 10 postow
+    currentPagePosts: 1,
+    currentPageComments: 1
+}
+
+//3.1 widelaem otdelno logiku tschasti(slice) priloschenia s opredelennimi instrumentami dlja raboti s etoj tschastju priloschenia
+const dataSlice = createSlice({
     name: 'users',
-    initialState,
+    initialState,// esli key i value sowpadajut, moschno napisatj tolko 1 ras initialState: initialState,
     reducers: {
         //opisiwaem Action prjamo sdes: tipisiruem (PajloadAction = action s nagruskoj tipa number)
-        setPage(state, action: PayloadAction<number>) {
-            state.currentPage = action.payload;
+        setUsers: (state, action: PayloadAction<IUser[]>) => {
+            state.users = action.payload
+        },
+        setPosts: (state, action: PayloadAction<IPost[]>) => {
+            state.posts = action.payload
+        },
+        setComments: (state, action: PayloadAction<IComment[]>) => {
+            state.comments = action.payload
+        },
+        setCurrentPagePosts(state, action: PayloadAction<number>) {//menaet str priloschenia
+            state.currentPagePosts = action.payload;
+        },
+        setCurrentPageComments(state, action: PayloadAction<number>) {//menaet str priloschenia
+            state.currentPageComments = action.payload;
         }
     }
 })
 
-export const {setPage} = userSlice.actions;
-export default userSlice.reducer;
+//3.2 exportiruju opisannie w slice instrumenti
+export const {setCurrentPagePosts, setCurrentPageComments, setUsers, setComments, setPosts} = dataSlice.actions;
+export default dataSlice.reducer;
