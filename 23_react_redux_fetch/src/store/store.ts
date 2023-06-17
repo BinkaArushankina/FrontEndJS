@@ -2,7 +2,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import dataSlice from '../reducer/reducers';
 
 //2.2 rootReducer kombiniruem wse imejuschiesa u nas reduceri
-const rootReducer = combineReducers({//objedinaet mnogo reducers, no sotoit is odnogo
+const rootReducer = combineReducers({//objedinaet mnogo reducers, no sostoit is odnogo
     data: dataSlice
 })
 

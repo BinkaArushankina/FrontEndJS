@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import {setUsers, setPosts, setComments} from './reducer/reducers';
+import {setUsers, setPosts, setComments, setPhotos} from './reducer/reducers';
 import DataFetcher from './components/DataFetcher';
 import Posts from './components/Posts';
 import Comments from './components/Comments';
+import Users from './components/Users';
+import Photos from './components/Photos';
 
 function App() {
   //const dispatch = useDispatch();
@@ -29,9 +31,13 @@ function App() {
         endpoint='https://jsonplaceholder.typicode.com/comments' 
         action={setComments}
       />
+      <DataFetcher 
+        endpoint='https://jsonplaceholder.typicode.com/photos' 
+        action={setPhotos}
+      />
 
-      
-
+      <Photos />
+      <Users />
       <Posts />
       <Comments />
       
