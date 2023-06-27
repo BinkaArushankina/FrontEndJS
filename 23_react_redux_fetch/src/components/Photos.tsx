@@ -5,30 +5,36 @@ import { DataState, setCurrentPagePhotos } from '../reducer/reducers';
 const Photos: React.FC = () => {
     const dispatch = useDispatch();
 
-    const photos = useSelector((state: {data: DataState}) => state.data.photos);
-    const currentPage = useSelector((state: {data: DataState}) => state.data.currentPagePhotos);
-    const photosPerPage = useSelector((state: {data: DataState}) => state.data.photosPerPage);
+    //DRY - Don't repeat yourself
+    //const photos = useSelector((state: {data: DataState}) => state.data.photos);
+    //const currentPage = useSelector((state: {data: DataState}) => state.data.currentPagePhotos);
+    //const photosPerPage = useSelector((state: {data: DataState}) => state.data.photosPerPage);
 
-    const indexOfLastElement = currentPage * photosPerPage;
+    //bolee korotkaja sapis etich 3 straniz
+    const {photos, currentPagePhotos, photosPerPage} = useSelector((state: {data: DataState}) => state.data);
+
+    // esli po 10 fotok, i mi na 5 stranize, to indexlastelem=50 , a indexoffirstelm=40 (first wkljutschen , a last net)
+    const indexOfLastElement = currentPagePhotos * photosPerPage;
     const indexOfFirstElement = indexOfLastElement - photosPerPage;
-    const currentPhotos = photos.slice(indexOfFirstElement, indexOfLastElement);//kusotschek kommentarij
+    const currentPhotos = photos.slice(indexOfFirstElement, indexOfLastElement);//kusotschek kommentarij, startowij wkljutschen a lastowij index net. otobraschajutsa tolko te 10, na stranize kotoroj mi nachodimsa
 
     const previousPage = () => {
-        dispatch(setCurrentPagePhotos(currentPage - 1));
+        dispatch(setCurrentPagePhotos(currentPagePhotos - 1));
     }
     const nextPage = () => {
-        dispatch(setCurrentPagePhotos(currentPage + 1));
+        dispatch(setCurrentPagePhotos(currentPagePhotos + 1));
     }
 
   return (
     <>
         <h2>Photos</h2>
+    
         <ul>
             {currentPhotos.map(photo => (
-                <li key={photo.id}>{photo.url}</li>
+                <li key={photo.id}><img src={photo.thumbnailUrl} alt="Photo1" /></li>
             ))}
         </ul>
-        <button disabled={currentPage === 1 } onClick={previousPage}>Previous Page</button>
+        <button disabled={currentPagePhotos === 1 } onClick={previousPage}>Previous Page</button>
         <button disabled={indexOfLastElement >= photos.length} onClick={nextPage}>Next Page</button>
     </>
   );

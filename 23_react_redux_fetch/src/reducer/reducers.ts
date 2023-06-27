@@ -18,7 +18,7 @@ interface IComment {
 
 interface IPhoto {
     id: number;
-    url: string
+    thumbnailUrl: string
 }
 
 // 3.4 Opisiwaem interface gloalnogo sostojania
@@ -68,8 +68,8 @@ const dataSlice = createSlice({
         setComments: (state, action: PayloadAction<IComment[]>) => {
             state.comments = action.payload
         },
-        setPhotos: (state, action: PayloadAction<IComment[]>) => {
-            state.comments = action.payload
+        setPhotos: (state, action: PayloadAction<IPhoto[]>) => {
+            state.photos = action.payload
         },
         setCurrentPagePosts(state, action: PayloadAction<number>) {//menaet str priloschenia
             state.currentPagePosts = action.payload;

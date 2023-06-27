@@ -51,14 +51,14 @@ export const {
     fetchWeatherFailure
 } = weatherSlice.actions;
 
-export const fetchWeather = (city: string) => {
+export const fetchWeather = (city: string): any => {
     return async (dispatch: AppDispatch) => {
         try {
             dispatch(fetchWeatherStart());//stutschimsa w serwer, esli dastutschimsa to success, a net, to failure
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fa1e72ff893c6a4a5ed4077327e855b4`);//teper moschno wisiwatj funkziu
-            dispatch(fetchWeatherSuccess(response.data));
+            dispatch(fetchWeatherSuccess(response.data));//oschibok pri sagruske net popadem sjuda
         } catch (error: any) {
-            dispatch(fetchWeatherFailure(error.message));
+            dispatch(fetchWeatherFailure(error.message));//pri oschibke sagruski sjuda
         }
     }
 }
